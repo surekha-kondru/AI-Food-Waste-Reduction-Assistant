@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Food Waste Reduction Assistant</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <h2>🥗 Food Waste Assistant</h2>
+        <div class="nav-links">
+            <a href="{{ url_for('home') }}">Home</a>
+            <a href="{{ url_for('inventory_page') }}">Inventory</a>
+            <a href="{{ url_for('alerts_page') }}">Alerts</a>
+            <a href="{{ url_for('recipes_page') }}">Recipes</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Welcome!</h1>
+        <p>Track your food, reduce waste, and get recipe ideas before things expire.</p>
+
+        <div class="stats">
+            <div class="stat-card">
+                <h3>{{ total_items }}</h3>
+                <p>Total Items in Inventory</p>
+            </div>
+            <div class="stat-card warning">
+                <h3>{{ expiring_count }}</h3>
+                <p>Items Expiring / Expired</p>
+            </div>
+        </div>
+
+        <div class="quick-links">
+            <a href="{{ url_for('inventory_page') }}" class="btn">Manage Inventory</a>
+            <a href="{{ url_for('alerts_page') }}" class="btn">View Alerts</a>
+            <a href="{{ url_for('recipes_page') }}" class="btn">Get Recipe Ideas</a>
+        </div>
+
+        {% if total_items > 0 %}
+        <div class="charts-section">
+            <div class="chart-card">
+                <h2>Inventory by Category</h2>
+                <canvas id="categoryChart"></canvas>
+            </div>
+            <div class="chart-card">
+                <h2>Expiry Status Breakdown</h2>
+                <canvas id="statusChart"></canvas>
+            </div>
+        </div>
+
+        <h2>Recently Added Items</h2>
+        <table class="data-table">
+            <tr>
+                <th>Item</th>
+                <th>Category</th>
+                <th>Purchase Date</th>
+                <th>Expiry Date</th>
+            </tr>
+            {% for item in recent_items %}
+            <tr>
+                <td>{{ item.item_name }}</td>
+                <td>{{ item.category }}</td>
+                <td>{{ item.purchase_date }}</td>
+                <td>{{ item.expiry_date }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <p>Your inventory is empty. Add some items to see charts and stats here!</p>
+        {% endif %}
+    </div>
+
+    <script>
+        {% if total_items > 0 %}
+        // Category Bar Chart
+        const categoryCtx = document.getElementById('categoryChart').getContext('2d');
+        new Chart(categoryCtx, {
+            type: 'bar',
+            data: {
+                labels: {{ category_labels | tojson }},
+                datasets: [{
+                    label: 'Items per Category',
+                    data: {{ category_values | tojson }},
+                    backgroundColor: '#43a047',
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { beginAtZero: true, ticks: { stepSize: 1 } }
+                }
+            }
+        });
+
+        // Status Pie Chart
+        const statusCtx = document.getElementById('statusChart').getContext('2d');
+        new Chart(statusCtx, {
+            type: 'doughnut',
+            data: {
+                labels: {{ status_labels | tojson }},
+                datasets: [{
+                    data: {{ status_values | tojson }},
+                    backgroundColor: ['#43a047', '#f57c00', '#e53935', '#9e9e9e']
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { legend: { position: 'bottom' } }
+            }
+        });
+        {% endif %}
+    </script>
+
+</body>
+</html>
