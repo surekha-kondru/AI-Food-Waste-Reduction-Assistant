@@ -1,0 +1,51 @@
+recipe_id,recipe_name,ingredients
+1,Tomato Basil Pasta,tomato pasta basil garlic olive oil salt
+2,Vegetable Stir Fry,tomato carrot beans capsicum onion soy sauce
+3,Bread Toast with Butter,bread butter salt
+4,French Toast,bread milk egg sugar cinnamon
+5,Bread Pudding,bread milk sugar egg butter raisins
+6,Yogurt Smoothie,yogurt banana milk honey
+7,Yogurt Parfait,yogurt granola honey berries
+8,Curd Rice,rice yogurt curry leaves mustard seeds salt
+9,Vegetable Fried Rice,rice carrot beans capsicum onion soy sauce egg
+10,Rice Pudding,rice milk sugar cardamom cashew
+11,Tomato Rice,rice tomato onion garlic chili spices
+12,Milk Pancakes,milk egg flour sugar butter
+13,Paneer Butter Masala,paneer tomato butter cream onion garlic spices
+14,Vegetable Soup,tomato carrot onion beans potato salt pepper
+15,Egg Fried Rice,rice egg onion soy sauce carrot
+16,Banana Milkshake,banana milk sugar ice
+17,Tomato Soup,tomato onion garlic butter cream salt pepper
+18,Milk Rice Kheer,rice milk sugar cardamom nuts
+19,Vegetable Sandwich,bread tomato cucumber onion butter salt
+20,Egg Bread Toast,bread egg milk salt pepper
+21,Potato Curry,potato onion tomato garlic ginger spices oil
+22,Aloo Paratha,potato flour butter salt spices
+23,Mashed Potatoes,potato milk butter salt pepper
+24,Potato Soup,potato onion garlic cream butter salt pepper
+25,Carrot Halwa,carrot milk sugar ghee cardamom nuts
+26,Carrot Soup,carrot onion garlic butter cream salt
+27,Cucumber Salad,cucumber tomato onion lemon salt pepper olive oil
+28,Cucumber Raita,cucumber yogurt salt cumin mint
+29,Banana Bread,banana flour sugar egg butter baking soda
+30,Banana Oats Smoothie,banana oats milk honey
+31,Apple Cinnamon Oatmeal,apple oats milk cinnamon honey
+32,Apple Pie,apple flour sugar butter cinnamon
+33,Mango Lassi,mango yogurt milk sugar
+34,Mango Smoothie,mango banana milk honey
+35,Spinach Soup,spinach onion garlic cream butter salt
+36,Spinach Paneer Curry,spinach paneer onion tomato garlic ginger spices
+37,Egg Curry,egg onion tomato garlic ginger spices oil
+38,Boiled Egg Salad,egg cucumber tomato onion salt pepper olive oil
+39,Chicken Curry,chicken onion tomato garlic ginger spices oil
+40,Chicken Soup,chicken carrot onion celery salt pepper
+41,Lentil Soup,lentils onion tomato garlic cumin salt
+42,Dal Tadka,lentils onion tomato garlic ghee cumin turmeric
+43,Chickpea Curry,chickpeas onion tomato garlic ginger spices oil
+44,Chickpea Salad,chickpeas cucumber tomato onion lemon olive oil
+45,Onion Soup,onion garlic butter cream salt pepper
+46,Garlic Bread,bread butter garlic parsley salt
+47,Vegetable Pulao,rice carrot beans peas onion spices ghee
+48,Peas Pulao,rice peas onion ghee spices
+49,Cheese Sandwich,bread cheese butter tomato salt
+50,Cheese Omelette,egg cheese milk salt pepper
